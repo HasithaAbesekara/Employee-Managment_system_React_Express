@@ -1,5 +1,17 @@
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Login from "./pages/Login";
+import AdminDashbord from "./pages/AdminDashbord";
+
 function App() {
-  return <div className=" text-3xl text-teal-300"> welcome EMP system</div>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Navigate to="/admin-dashboard" replace />} />
+        <Route path="/login" exact element={<Login />} />
+        <Route path="/admin-dashboard" element={<AdminDashbord />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
